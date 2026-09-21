@@ -2,12 +2,10 @@
 # Category: Easy
 # Topic: Array
 
-
+###-------------------------------------------------------------------------------------------------------------###
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
 You must write an algorithm with O(log n) runtime complexity.
-
- 
 
 Example 1:
 
@@ -33,22 +31,72 @@ nums contains distinct values sorted in ascending order.
 ###-------------------------------------------------------------------------------------------------------------###
 Solution in JavaScript:
 
-
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+    for( var i = 0; i < nums.length; i++){
+        if(target <= nums[i]){
+            return i;
+        }
+    }
+    return nums.length;
+};
 
 ###-------------------------------------------------------------------------------------------------------------###
-Solution in JavaScript:
-
+Solution in Python:
+class Solution(object):
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        for i in range (len(nums)):
+            if target <= nums[i]:
+                return i
+                
+        return len(nums)
 
 ###-------------------------------------------------------------------------------------------------------------###
-Solution in JavaScript:
-
+Solution in C++:
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+    for( int i = 0; i < nums.size(); i++){
+        if(target <= nums[i]){
+            return i;
+        }
+    }
+    return nums.size();
+    }
+};
 
 ###-------------------------------------------------------------------------------------------------------------###
-Solution in JavaScript:
+Solution in C:
 
+int searchInsert(int* nums, int numsSize, int target) {
 
+    for( int i = 0; i < numsSize; i++){
+        if(target <= nums[i]){
+            return i;
+        }
+    }
+    return numsSize;
+};
 ###-------------------------------------------------------------------------------------------------------------###
-Solution in JavaScript:
-
-
+Solution in Java:
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+    
+        for( var i = 0; i < nums.length; i++){
+        if(target <= nums[i]){
+            return i;
+        }
+    }
+    return nums.length;
+    }
+}
 ###-------------------------------------------------------------------------------------------------------------###
