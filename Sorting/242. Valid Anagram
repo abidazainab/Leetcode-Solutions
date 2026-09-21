@@ -1,0 +1,64 @@
+Name: Valid Anagram
+Category: Easy
+Topic Sorting
+
+Problem:
+###------------------------------------------------------------------------###
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+Anagram: An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.
+ 
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+
+Output: true
+
+Example 2:
+
+Input: s = "rat", t = "car"
+
+Output: false
+
+
+Constraints:
+
+1 <= s.length, t.length <= 5 * 104
+s and t consist of lowercase English letters.
+
+###------------------------------------------------------------------------###
+Solution in JavaScript:
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    return s.split("").sort().join("") === t.split("").sort().join("");
+};
+
+Different:
+###------------------------------------------------------------------------###
+Solution in python:
+class Solution(object):
+    def isAnagram(self, s, t):
+        if len(s) != len(t):
+            return False
+
+        count = {}
+
+        for i in range(len(s)):
+            count[s[i]] = count.get(s[i], 0) + 1
+
+        for i in range(len(t)):
+            if t[i] not in count:
+                return False
+
+            count[t[i]] -= 1
+
+        return True
+
+###------------------------------------------------------------------------###
+
+
+
+###------------------------------------------------------------------------###
